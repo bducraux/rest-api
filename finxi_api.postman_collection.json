@@ -1,0 +1,356 @@
+{
+	"info": {
+		"_postman_id": "72c1868e-0b95-4af1-9e7e-a8a6cfe3c6c6",
+		"name": "finxi_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Demanda",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "descricao",
+									"value": "Peça xyz",
+									"type": "text"
+								},
+								{
+									"key": "endereco",
+									"value": "endereco do anunciante",
+									"type": "text"
+								},
+								{
+									"key": "contato",
+									"value": "forma de contato com o anunciante",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/demandas/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"demandas",
+								""
+							]
+						},
+						"description": "cria uma demanda de peça"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "descricao",
+									"value": "peça aterada xyz",
+									"type": "text"
+								},
+								{
+									"key": "endereco",
+									"value": "endereco alterado",
+									"type": "text"
+								},
+								{
+									"key": "contato",
+									"value": "contato alterado",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/demandas/1/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"demandas",
+								"1",
+								""
+							]
+						},
+						"description": "altera uma demanda específica"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/demandas/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"demandas",
+								""
+							]
+						},
+						"description": "Lista demandas relacionadas ao anunciante ou todas se for admin"
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/demandas/1/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"demandas",
+								"1",
+								""
+							]
+						},
+						"description": "Recupera uma demanda por id"
+					},
+					"response": []
+				},
+				{
+					"name": "finalizar",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/demandas/1/finalizar/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"demandas",
+								"1",
+								"finalizar",
+								""
+							]
+						},
+						"description": "Finaliza uma demanda especifica"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/demandas/1/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"demandas",
+								"1",
+								""
+							]
+						},
+						"description": "Apaga uma demanda específica"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "admin",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "admin@admin.com",
+						"type": "string"
+					}
+				]
+			}
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test@test.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "senha123",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/users/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								""
+							]
+						},
+						"description": "Cria usuário"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/users/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								""
+							]
+						},
+						"description": "lista usuários"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "admin",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "admin@admin.com",
+						"type": "string"
+					}
+				]
+			}
+		},
+		{
+			"name": "Token",
+			"item": [
+				{
+					"name": "get_token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "35200493-9031-463c-92df-01e030ea9bbc",
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"",
+									"pm.globals.set(\"token\", jsonData.token);",
+									"pm.environment.set(\"token\", jsonData.token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test@test.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "senha123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api-token-auth/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api-token-auth",
+								""
+							]
+						},
+						"description": "Se autentica na api para pegar o token"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3d7be885-a3a5-403a-9710-99b1b94b049d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "132583c2-40d6-423c-8749-2b402a44b844",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "1cc736cb-b37d-4a59-85df-1b1991853c27",
+			"key": "token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "0a0f8e23-a6c2-4252-a794-180a15403f16",
+			"key": "url",
+			"value": "localhost:8000",
+			"type": "string"
+		}
+	]
+}
