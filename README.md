@@ -22,13 +22,13 @@ docker-compose run web python manage.py migrate
 docker-compose run web python manage.py createsuperuser
 
 sugestão de usuario para funcionar sem alterações no Postman:
-email:admin@admin
+email:admin@admin.com
 password: admin
 confirma a senha
 y para aceitar senha
 ```
 
-5. Execute o container:
+5. Executando o container:
 
 ```
 docker-compose up
